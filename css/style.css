@@ -12,6 +12,7 @@
 /* para poder usar rem mas facil */
 html{
     font-size: 62.5%;
+    box-sizing: border-box; /* para usar mejor box model */
 }
 
 body{
@@ -19,6 +20,11 @@ body{
     font-family: 'Krub', sans-serif; /* por defecto se carga el estilo de 700 */
 }
 /*fin */
+
+ /* para usar mejor box model */
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 
 /* diseño al header */
@@ -64,14 +70,13 @@ body{
 .navegacion-principal{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 
 @media (min-width: 768px) {
     .navegacion-principal{
-        display: flex;
         flex-direction: row;
+        justify-content: space-around;
     }
 }
 
@@ -85,3 +90,41 @@ body{
     width: 90%;
     margin: 0 auto;
 }
+
+/* estilo al fondo imagen */
+.fondo_imagen{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* para que la imagen tome todo el ancho del contenedor */
+    height: 420px;
+    position: relative; /* el padre siempre debe tener posicion relativa para que el hiji pueda tener posicion aabsoluta */
+}
+
+.fondo_imagen-contenido{
+ position: absolute;
+ background-color: rgba(0 0 0 / 70%); 
+ width: 0px 0px;
+ height: 100%;
+ width: 100%;
+
+ display: flex;
+ flex-direction: column;
+ align-items: center; /* alinear horizontalmente */
+ justify-content: center;  /* alinear verticalmente */
+
+}
+
+.fondo_imagen-contenido h2,
+.fondo_imagen-contenido p {
+    color: var(--blanco);
+}
+
+.fondo_imagen-contenido a{
+    text-decoration: none;
+    color: var(--blanco);
+    background: var(--secundario);
+    padding: 1rem;
+}
+
+
+
