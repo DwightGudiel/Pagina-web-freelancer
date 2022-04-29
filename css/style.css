@@ -124,7 +124,16 @@ body{
     color: var(--blanco);
     background: var(--secundario);
     padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    width: 90%;
+    text-align: center;
 }
 
+@media (min-width: 768px) {
+    .fondo_imagen-contenido a{
+        width: auto;
+    }
+}
 
 
