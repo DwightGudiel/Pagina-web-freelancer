@@ -1,0 +1,87 @@
+/* creamos nuestros colores personalizados */
+:root{
+    --blanco:#ffffff;
+    --negro:#212121;
+    --primario:#ffC107;
+    --secundario:#0097A7;
+    --gris:#757575;
+
+}
+/* fin */
+
+/* para poder usar rem mas facil */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif; /* por defecto se carga el estilo de 700 */
+}
+/*fin */
+
+
+/* diseño al header */
+
+.perfil{
+    width: 10rem;
+    border: solid 1rem var(--blanco);
+    border-radius: 20em;
+}
+
+
+.titulo{
+    text-align: center;
+    font-size: 3.8rem;
+    margin: 0;
+}
+
+.titulo span{
+    font-size: 2rem;
+    color: var(--primario);
+}
+
+/* fin del diseño al header */
+
+
+/* estilo al nav */
+
+.navegacion{
+    background: var(--secundario);
+}
+
+.navegacion-principal a{
+    text-align: center;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    background: var(--primario);
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/* fin estilo al nav */
+
+
+/* estilo al nav */
+
+.contenedor{
+    max-width: 150rem;
+    width: 90%;
+    margin: 0 auto;
+}
