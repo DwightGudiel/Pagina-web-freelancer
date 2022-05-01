@@ -152,7 +152,7 @@ h2{
 }
 
 
-
+/* estilo a las secciones del main */
 @media (min-width: 768px) {
     .contenido-principal{
         display: grid;
@@ -167,6 +167,11 @@ h2{
     padding: 2rem;
 }
 
+.secciones p{
+    line-height: 30px; /* dar separacion entre cada texto */
+    text-align: justify;
+}
+
 .secciones h3{
   color: var(--secundario);
 }
@@ -177,11 +182,81 @@ h2{
     border-radius: 50%;/*  para que el borde sea redondo */
 }
 
-
+/* estilo al footer */
 footer{
     background: var(--secundario);
-    padding: 2rem;
+    padding: 1.5rem;
     color: var(--blanco);
     text-align: center;
-    
+    text-transform: uppercase;
+    font-size: 700;
 }
+
+/* estilos al formulario*/
+
+.formulario{
+    background: rgba( 0 0 0 /11%);
+    width: min(60rem,100%); /* toma el valor mas pequeño, agarra el 100% cuando es en movil*/
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-shadow: 0px 5px 15px 0px rgba(107,103,107,0.6);
+}
+
+.formulario-contenido fieldset{
+    border: none;
+}
+
+.formulario-contenido legend{
+    color: var(--secundario);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+.campo label{
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.input{
+    margin-bottom: 1rem;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.boton:hover{
+    cursor:pointer /* para que aparezca el icono de imagen al pasar por el boton */
+}
+
+.boton{
+  width: 100%;
+  padding: 1rem;
+  background: var(--secundario);
+  color: var(--blanco);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.enviar{
+ text-align: center;
+}
+
+.alinear-derecha{
+ display: flex;
+}
+
+@media (min-width: 768px) {
+    .alinear-derecha{
+       justify-content: flex-end;
+       margin: auto;
+    }
+}
+
+
+
+
+
