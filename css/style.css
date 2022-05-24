@@ -1,55 +1,77 @@
 /* creamos nuestros colores personalizados */
-:root{
-    --blanco:#ffffff;
-    --negro:#212121;
-    --primario:#ffC107;
-    --secundario:#0097A7;
-    --gris:#757575;
+:root {
+    --blanco: #ffffff;
+    --negro: #0F2027;
+    --primario: #ffC107;
+    --secundario: #483D8B;
+    --gris: #757575;
+    --verde: #006400;
 
 }
+
 /* fin */
 
 /* para poder usar rem mas facil */
-html{
+html {
     font-size: 62.5%;
-    box-sizing: border-box; /* para usar mejor box model */
+    box-sizing: border-box;
+    /* para usar mejor box model */
 }
 
-body{
+body {
     font-size: 16px;
-    font-family: 'Krub', sans-serif; /* por defecto se carga el estilo de 700 */
-    background-image: linear-gradient(to top,rgba( 0 0 0 / 10%) 0%,var(--blanco) 100%);
+    font-family: 'Krub', sans-serif;
+    background: var(--negro);
+    /* por defecto se carga el estilo de 700 */
+    /* background-image: linear-gradient(to top, rgba(0 0 0 / 10%) 0%, var(--blanco) 100%); */
 }
+
 /*fin */
 
- /* para usar mejor box model */
-*, *:before, *:after {
+/* para usar mejor box model */
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
 /* estilo a todos los h2 */
-h2{
+h2 {
     text-align: center;
+    color: var(--blanco);
 }
+
+p {
+    text-align: justify;
+}
+
+
+.contenedor {
+    max-width: 150rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
 
 /* diseño al header */
 
-.perfil{
+.perfil {
     width: 10rem;
-    border: solid 1rem var(--blanco);
-    border-radius: 20em;
+    border: solid 0.5rem var(--secundario);
+    border-radius: 50%;
 }
 
 
-.titulo{
+.titulo {
     text-align: center;
     font-size: 3.8rem;
+    color: var(--secundario);
     margin: 0;
 }
 
-.titulo span{
+.titulo span {
     font-size: 2rem;
-    color: var(--primario);
+    color: white;
 }
 
 /* fin del diseño al header */
@@ -57,29 +79,29 @@ h2{
 
 /* estilo al nav */
 
-.navegacion{
+.navegacion {
     background: var(--secundario);
 }
 
-.navegacion-principal a{
+.navegacion-principal a {
     text-align: center;
     color: var(--blanco);
     text-decoration: none;
     padding: 1rem;
 }
 
-.navegacion-principal a:hover{
-    background: var(--primario);
+.navegacion-principal a:hover {
+    background: #0097A7;
 }
 
-.navegacion-principal{
+.navegacion-principal {
     display: flex;
     flex-direction: column;
 }
 
 
 @media (min-width: 768px) {
-    .navegacion-principal{
+    .navegacion-principal {
         flex-direction: row;
         justify-content: space-around;
     }
@@ -88,33 +110,34 @@ h2{
 /* fin estilo al nav */
 
 
-/* estilo al nav */
-
-.contenedor{
-    max-width: 120rem;
-    width: 90%;
-    margin: 0 auto;
-}
-
 /* estilo al fondo imagen */
-.fondo_imagen{
+.fondo_imagen {
     background-image: url(../img/hero.jpg);
     background-repeat: no-repeat;
-    background-size: cover; /* para que la imagen tome todo el ancho del contenedor */
+    background-size: cover;
+    /* para que la imagen tome todo el ancho del contenedor */
+    background-attachment: fixed;
+    /* lo usamos para que la imagen tenga el efecto de  quedar estatica al hacer scroll  */
     height: 420px;
-    position: relative; /* el padre siempre debe tener posicion relativa para que el hijo pueda tener posicion aabsoluta */
+    position: relative;
+    /* el padre siempre debe tener posicion relativa para que el hijo pueda tener posicion aabsoluta */
 }
 
-.fondo_imagen-contenido{
- position: absolute;
- background-color: rgba(0 0 0 / 70%); /*  dar tranparencia al div  */
- height: 100%; /* alto para que el div abarque toda la imagen */
- width: 100%; /*  ancho para que el div abarque toda la imagen */
+.fondo_imagen-contenido {
+    position: absolute;
+    background-color: rgba(0 0 0 / 20%);
+    /*  dar tranparencia al div  */
+    height: 100%;
+    /* alto para que el div abarque toda la imagen */
+    width: 100%;
+    /*  ancho para que el div abarque toda la imagen */
 
- display: flex;
- flex-direction: column;
- align-items: center; /* alinear horizontalmente */
- justify-content: center;  /* alinear verticalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* alinear horizontalmente */
+    justify-content: center;
+    /* alinear verticalmente */
 
 }
 
@@ -123,7 +146,7 @@ h2{
     color: var(--blanco);
 }
 
-.fondo_imagen-contenido a{
+.fondo_imagen-contenido a {
     text-decoration: none;
     color: var(--blanco);
     background: var(--secundario);
@@ -135,128 +158,241 @@ h2{
 }
 
 @media (min-width: 768px) {
-    .fondo_imagen-contenido a{
-        width: auto; /* para poner boton con un ancho por default  */
+    .fondo_imagen-contenido a {
+        width: auto;
+        /* para poner boton con un ancho por default  */
     }
 }
+
 /* fin  estilo al fondo imagen */
 
 
 /* estilo al main */
 
-.sombra{ /* agregamos sombra el contenedor */ 
-    box-shadow: 0px 5px 15px 0px rgba(107,103,107,0.6);
-    background: var(--blanco);
+.sombra {
+    /* agregamos sombra el contenedor */
+    box-shadow: 0px 5px 15px 0px rgba(6, 105, 46, 0.6);
+    background: var(--negro);
     padding: 2rem;
     margin-top: 2rem;
 }
 
+.contenido-principal {
+    background: var(--negro);
+}
 
 /* estilo a las secciones del main */
 @media (min-width: 768px) {
-    .contenido-principal{
+    .contenido-principal {
         display: grid;
-        grid-template-columns:repeat(3,1fr);
-       }
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.secciones{
+.anuncio {
+    padding: 1rem;
+    text-transform: uppercase;
+    background: var(--secundario);
+    color: var(--blanco);
+
+}
+
+.secciones {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
 }
 
-.secciones p{
-    line-height: 30px; /* dar separacion entre cada texto */
+.secciones p {
+    line-height: 30px;
+    /* dar separacion entre cada texto */
     text-align: justify;
+    color: white;
 }
 
-.secciones h3{
-  color: var(--secundario);
+.secciones h3 {
+    color: var(--blanco);
 }
 
-.icono{
-    background-color: var(--primario);
+.icono {
+    background-color: var(--secundario);
     padding: 2rem;
-    border-radius: 50%;/*  para que el borde sea redondo */
+    border-radius: 50%;
+    /*  para que el borde sea redondo */
 }
+
 
 /* estilo al footer */
-footer{
+footer {
     background: var(--secundario);
-    padding: 1.5rem;
+    padding-bottom: 1;
+    margin-top: 2rem;
+}
+
+footer p {
     color: var(--blanco);
+    margin-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
     text-transform: uppercase;
     font-size: 700;
 }
 
-/* estilos al formulario*/
-
-.formulario{
-    background: rgba( 0 0 0 /11%);
-    width: min(60rem,100%); /* toma el valor mas pequeño, agarra el 100% cuando es en movil*/
-    margin: 0 auto;
-    padding: 1.5rem;
-    box-shadow: 0px 5px 15px 0px rgba(107,103,107,0.6);
+.icono-redes {
+    padding: 1rem;
+    margin-left: 1rem;
 }
 
-.formulario-contenido fieldset{
+
+/* ===================estilo redes footer===================== */
+.columnas2 {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ===========================================
+           estilos a la pagina contacto
+========================================== */
+
+/* estilos al formulario*/
+
+.formulario {
+    background: rgba(0 0 0 /11%);
+    width: min(60rem, 100%);
+    /* toma el valor mas pequeño, agarra el 100% cuando es en movil*/
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-shadow: 0px 5px 15px 0px rgba(248, 249, 250, 0.6);
+}
+
+.formulario-contenido fieldset {
     border: none;
 }
 
-.formulario-contenido legend{
-    color: var(--secundario);
+.formulario-contenido legend {
+    color: var(--blanco);
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 
-.campo label{
+.campo label {
     font-weight: bold;
-    margin-bottom: 1rem;
+    color: var(--blanco);
+    margin-top: 4rem;
     display: block;
 }
 
-.input{
+.campo ::placeholder{ 
+    font-weight: bold; 
+    color: var(--blanco);
+}
+
+.input {
     margin-bottom: 1rem;
+    color: var(--blanco);
     width: 100%;
+    background: rgba(0 0 0 / 30%);
     border: none;
     padding: 1rem;
     border-radius: 1.5rem;
 }
 
-.boton:hover{
-    cursor:pointer /* para que aparezca el icono de imagen al pasar por el boton */
-}
-
-.boton{
-  width: 100%;
-  padding: 1rem;
-  background: var(--secundario);
-  color: var(--blanco);
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.enviar{
- text-align: center;
-}
-
-.alinear-derecha{
- display: flex;
+.campo textarea {
+    height: 15rem;
 }
 
 @media (min-width: 768px) {
-    .alinear-derecha{
-       justify-content: flex-end;
-       margin: auto;
+    .campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        gap: 2rem
+    }
+}
+
+.total_area_columna {
+    grid-column: 1 / 3;
+}
+
+
+/* estilo a los botones */
+.boton:hover {
+    cursor: pointer;
+        /* para que aparezca el icono de imagen al pasar por el boton */
+}
+
+.boton {
+    width: 100%;
+    margin-top: 5rem;
+    padding: 1rem;
+    background: var(--secundario);
+    color: var(--blanco);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.enviar {
+    text-align: center;
+}
+
+.alinear-derecha {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .alinear-derecha {
+        justify-content: flex-end;
+        margin: auto;
     }
 }
 
 
 
+/* ===========================================
+      estilos a la pagina sobre nosotros 
+========================================== */
+
+.contenido-nosotros section {
+    border: solid 2px #212121;
+    padding: 2rem;
+}
 
 
+.contenido-nosotros {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-nosotros h3{
+   color: var(--blanco);
+   text-align: center;
+}
+
+.contenido-nosotros p{
+    color: var(--blanco);
+ }
+
+
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 2rem;
+    }
+}
+
+img {
+    width: 100%;
+    padding: 1rem;
+}
+
+
+.titulo-nosotros {
+    background: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem;
+}
